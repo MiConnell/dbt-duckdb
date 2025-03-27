@@ -94,7 +94,7 @@ class DuckDBAdapter(SQLAdapter):
     def location_exists(self, location: str) -> bool:
         try:
             self.execute(
-                f"select 1 from '{location}' where 1=0",
+                f"select 1 from {location} where 1=0",
                 auto_begin=False,
                 fetch=False,
             )
